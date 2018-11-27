@@ -232,6 +232,10 @@ function expandOutput (script, scriptType, ourPubKey) {
       pubKeys = scriptChunks.slice(1, -2)
       break
 
+    case scriptTypes.NONSTANDARD:
+      pubKeys = [ourPubKey]
+      break
+
     default: return { scriptType: scriptType }
   }
 
